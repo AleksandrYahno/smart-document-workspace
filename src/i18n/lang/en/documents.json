@@ -1,0 +1,13 @@
+{
+  "list_title": "Documents",
+  "upload": "Upload",
+  "name": "Name",
+  "type": "Type",
+  "size": "Size",
+  "owner": "Owner",
+  "last_modified": "Last modified",
+  "status": "Status",
+  "status_draft": "Draft",
+  "status_review": "Review",
+  "status_approved": "Approved"
+}

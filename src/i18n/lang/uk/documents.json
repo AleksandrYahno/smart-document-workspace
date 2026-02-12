@@ -1,0 +1,13 @@
+{
+  "list_title": "Документи",
+  "upload": "Завантажити",
+  "name": "Назва",
+  "type": "Тип",
+  "size": "Розмір",
+  "owner": "Власник",
+  "last_modified": "Змінено",
+  "status": "Статус",
+  "status_draft": "Чернетка",
+  "status_review": "На перевірці",
+  "status_approved": "Затверджено"
+}

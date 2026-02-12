@@ -1,0 +1,14 @@
+{
+  "app_title": "Smart Document Workspace",
+  "search": "Search",
+  "close": "Close",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit",
+  "confirm": "Confirm",
+  "back": "Back",
+  "loading": "Loading...",
+  "no_data": "No data available",
+  "error_occurred": "An error occurred"
+}
