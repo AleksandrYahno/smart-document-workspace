@@ -1,0 +1,13 @@
+@use '../../../../../shared/uiKit/variables' as *;
+@use '../../../../../shared/uiKit/remUtils' as *;
+
+.root {
+  width: 100%;
+}
+
+.title {
+  margin: 0 0 rem(16);
+  font-size: #{rem(16)};
+  font-weight: 600;
+  color: $color-text;
+}

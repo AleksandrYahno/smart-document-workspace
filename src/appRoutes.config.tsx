@@ -6,6 +6,7 @@ import { DocumentListStoreProvider } from '@modules/documents/documentListPage/p
 import DocumentDetailPage from '@modules/documents/documentDetailPage/DocumentDetailPage';
 import UploadPage from '@modules/documents/uploadPage/UploadPage';
 import { UploadStoreProvider } from '@modules/documents/uploadPage/providers/uploadStoreProvider';
+import AnalyticsPage from '@modules/documents/analyticsPage/AnalyticsPage';
 
 export const appRouter = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const appRouter = createBrowserRouter([
             <UploadPage />
           </UploadStoreProvider>
         ),
+      },
+      {
+        path: 'analytics',
+        element: <AnalyticsPage />,
       },
       {
         path: '*',

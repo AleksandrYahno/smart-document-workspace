@@ -1,0 +1,71 @@
+@use '../../../../../shared/uiKit/variables' as *;
+@use '../../../../../shared/uiKit/remUtils' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+}
+
+.addRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: rem(12);
+}
+
+.select {
+  min-width: rem(100);
+  font-family: inherit;
+  font-size: #{rem(14)};
+  padding: p(8, 12);
+  border: 1px solid $color-border;
+  border-radius: br(8);
+  color: $color-text;
+  background-color: $color-surface;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+.userList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.userItem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: rem(12);
+  padding: rem(8) 0;
+  border-bottom: 1px solid $color-border;
+  font-size: #{rem(14)};
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.userEmail {
+  flex: 1;
+  min-width: rem(120);
+  color: $color-text;
+}
+
+.selectInline {
+  font-family: inherit;
+  font-size: #{rem(13)};
+  padding: p(4, 8);
+  border: 1px solid $color-border;
+  border-radius: br(6);
+  color: $color-text;
+  background-color: $color-surface;
+}
+
+.removeBtn {
+  flex-shrink: 0;
+}

@@ -1,0 +1,79 @@
+@use '../../../shared/uiKit/variables' as *;
+@use '../../../shared/uiKit/remUtils' as *;
+
+.page {
+  padding: p(24);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: rem(24);
+}
+
+.title {
+  margin: 0 0 rem(8);
+  font-size: #{rem(24)};
+  font-weight: 600;
+  color: $color-text;
+}
+
+.dateFilter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: rem(12);
+  margin-bottom: rem(24);
+  padding: rem(16);
+  background: $color-background;
+  border: 1px solid $color-border;
+  border-radius: br(8);
+}
+
+.dateFilterLabel {
+  font-size: #{rem(14)};
+  font-weight: 500;
+  color: $color-text;
+}
+
+.dateInput {
+  font-family: inherit;
+  font-size: #{rem(14)};
+  padding: p(6, 10);
+  border: 1px solid $color-border;
+  border-radius: br(6);
+  color: $color-text;
+  background-color: $color-surface;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(400), 1fr));
+  gap: rem(24);
+  margin-bottom: rem(24);
+}
+
+.chartCard {
+  padding: rem(20);
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: br(8);
+  box-shadow: 0 rem(1) rem(3) 0 rgba(0, 0, 0, 0.06);
+}
+
+.chartTitle {
+  margin: 0 0 rem(16);
+  font-size: #{rem(16)};
+  font-weight: 600;
+  color: $color-text;
+}
+
+.chartContainer {
+  width: 100%;
+  height: rem(300);
+}

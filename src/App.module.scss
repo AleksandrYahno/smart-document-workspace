@@ -12,6 +12,12 @@
   background-color: $color-surface;
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+  gap: rem(24);
+}
+
 .headerLink {
   font-weight: 600;
   color: $color-text;

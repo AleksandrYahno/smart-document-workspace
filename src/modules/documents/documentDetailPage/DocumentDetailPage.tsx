@@ -13,6 +13,7 @@ import { getMockVersionHistory } from './documentDetailVersionHistory.mock';
 
 import { statusVariantMap } from '../documentListPage/configs/documentListColumns.config';
 import DocumentDetailComments from './components/DocumentDetailComments/DocumentDetailComments';
+import DocumentDetailSharing from './components/DocumentDetailSharing/DocumentDetailSharing';
 
 import styles from './documentDetailPage.module.scss';
 
@@ -170,6 +171,13 @@ const DocumentDetailPage: FC = (): ReactElement => {
           {t('detail_comments_title')}
         </h2>
         <DocumentDetailComments />
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>
+          {t('detail_sharing_title')}
+        </h2>
+        <DocumentDetailSharing documentId={document.id} />
       </section>
 
       <section className={styles.section}>
