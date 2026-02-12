@@ -3,6 +3,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from './App';
 import DocumentListPage from '@modules/documents/documentListPage/DocumentListPage';
 import UploadPage from '@modules/documents/uploadPage/UploadPage';
+import { UploadStoreProvider } from '@modules/documents/uploadPage/providers/uploadStoreProvider';
 
 export const appRouter = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ export const appRouter = createBrowserRouter([
       },
       {
         path: 'documents/upload',
-        element: <UploadPage />,
+        element: (
+          <UploadStoreProvider>
+            <UploadPage />
+          </UploadStoreProvider>
+        ),
       },
       {
         path: '*',
