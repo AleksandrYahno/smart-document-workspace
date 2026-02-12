@@ -5,7 +5,7 @@ import { useReactTable, getCoreRowModel } from '@tanstack/react-table';
 
 import { useGetDocumentsListQuery } from '@api/documentsApi';
 
-import { DocumentListStoreProvider, useDocumentListStoreProvider } from './providers/documentListStoreProvider';
+import { useDocumentListStoreProvider } from './providers/documentListStoreProvider';
 import { getDocumentListColumns } from './configs/documentListColumns.config';
 import DocumentListSearchVM from './components/DocumentListSearchVM/DocumentListSearchVM';
 import DocumentListToolbarVM from './components/DocumentListToolbarVM/DocumentListToolbarVM';
@@ -15,7 +15,7 @@ import styles from './documentListPage.module.scss';
 
 const PAGE_SIZE = 10;
 
-const DocumentListPageInner: FC = (): ReactElement => {
+const DocumentListPage: FC = (): ReactElement => {
   const { t } = useTranslation('documents');
   const { documentListStore } = useDocumentListStoreProvider();
 
@@ -87,11 +87,5 @@ const DocumentListPageInner: FC = (): ReactElement => {
     </div>
   );
 };
-
-const DocumentListPage: FC = (): ReactElement => (
-  <DocumentListStoreProvider>
-    <DocumentListPageInner />
-  </DocumentListStoreProvider>
-);
 
 export default DocumentListPage;

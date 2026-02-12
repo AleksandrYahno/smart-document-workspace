@@ -1,5 +1,6 @@
 import type { TFunction } from 'i18next';
 import type { ColumnDef } from '@tanstack/react-table';
+import { Link } from 'react-router-dom';
 
 import { formatBytes } from '@helpers/formatBytes.helper';
 import { formatDate } from '@helpers/formatDate.helper';
@@ -37,7 +38,11 @@ export const getDocumentListColumns = (t: TFunction<'documents'>): ColumnDef<IDo
   {
     accessorKey: 'name',
     header: t('name'),
-    cell: (info) => info.getValue() as string,
+    cell: ({ row }) => (
+      <Link to={`/documents/${row.original.id}`}>
+        {row.original.name}
+      </Link>
+    ),
     enableHiding: true,
   },
   {

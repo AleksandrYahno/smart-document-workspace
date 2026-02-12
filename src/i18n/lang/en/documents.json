@@ -1,5 +1,13 @@
 {
   "list_title": "Documents",
+  "detail_back_to_list": "Back to list",
+  "detail_not_found": "Document not found",
+  "detail_preview": "Preview",
+  "detail_preview_pdf": "PDF preview placeholder",
+  "detail_preview_docx": "Document preview placeholder",
+  "detail_preview_image": "Image preview placeholder",
+  "detail_metadata": "Metadata",
+  "detail_modified": "Modified {{date}}",
   "upload": "Upload",
   "name": "Name",
   "type": "Type",

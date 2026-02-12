@@ -19,6 +19,15 @@
   font-size: rem(16);
   font-weight: 600;
   color: $color-text;
+
+  a {
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .body {

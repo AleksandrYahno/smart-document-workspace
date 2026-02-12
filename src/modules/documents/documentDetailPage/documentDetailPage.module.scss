@@ -1,0 +1,109 @@
+@use 'sass:color';
+@use '../../../shared/uiKit/variables' as *;
+@use '../../../shared/uiKit/remUtils' as *;
+
+.page {
+  padding: p(24);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: rem(16);
+  font-size: #{rem(14)};
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.header {
+  margin-bottom: rem(24);
+}
+
+.title {
+  margin: 0 0 rem(8);
+  font-size: #{rem(24)};
+  font-weight: 600;
+  color: $color-text;
+}
+
+.metaRow {
+  font-size: #{rem(14)};
+  color: $color-text-secondary;
+}
+
+.section {
+  margin-bottom: rem(32);
+}
+
+.sectionTitle {
+  margin: 0 0 rem(12);
+  font-size: #{rem(16)};
+  font-weight: 600;
+  color: $color-text;
+}
+
+.previewPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(240);
+  padding: rem(24);
+  background: $color-background;
+  border: 1px dashed $color-border;
+  border-radius: br(8);
+  color: $color-text-secondary;
+  font-size: #{rem(14)};
+}
+
+.metadataList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.metadataItem {
+  display: flex;
+  gap: rem(12);
+  padding: rem(8) 0;
+  border-bottom: 1px solid $color-border;
+  font-size: #{rem(14)};
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.metadataTerm {
+  flex-shrink: 0;
+  min-width: rem(120);
+  color: $color-text-secondary;
+}
+
+.metadataDesc {
+  margin: 0;
+  color: $color-text;
+}
+
+.loading {
+  margin: rem(24) 0;
+  font-size: #{rem(14)};
+  color: $color-text-secondary;
+}
+
+.error {
+  margin: rem(24) 0;
+  font-size: #{rem(14)};
+  color: #c00;
+}
+
+.notFound {
+  margin: rem(24) 0;
+  font-size: #{rem(14)};
+  color: $color-text-secondary;
+}

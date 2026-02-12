@@ -1,5 +1,6 @@
 import { FC, ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 import { formatBytes } from '@helpers/formatBytes.helper';
 import { formatDate } from '@helpers/formatDate.helper';
@@ -26,7 +27,11 @@ const DocumentListGridView: FC<IDocumentListGridViewProps> = (props): ReactEleme
         {items.map((doc) => (
           <Card
             key={doc.id}
-            title={doc.name}
+            title={
+              <Link to={`/documents/${doc.id}`}>
+                {doc.name}
+              </Link>
+            }
           >
             <dl className={styles.cardMeta}>
               <dt>

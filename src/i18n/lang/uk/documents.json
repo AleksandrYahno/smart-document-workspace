@@ -1,5 +1,13 @@
 {
   "list_title": "Документи",
+  "detail_back_to_list": "Назад до списку",
+  "detail_not_found": "Документ не знайдено",
+  "detail_preview": "Превʼю",
+  "detail_preview_pdf": "Плейсхолдер превʼю PDF",
+  "detail_preview_docx": "Плейсхолдер превʼю документа",
+  "detail_preview_image": "Плейсхолдер превʼю зображення",
+  "detail_metadata": "Метадані",
+  "detail_modified": "Змінено {{date}}",
   "upload": "Завантажити",
   "name": "Назва",
   "type": "Тип",
