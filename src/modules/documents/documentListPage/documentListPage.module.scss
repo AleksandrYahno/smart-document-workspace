@@ -22,6 +22,13 @@
   color: $color-text;
 }
 
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
 .searchForm {
   display: flex;
   gap: 0.5rem;
@@ -30,6 +37,63 @@
 
 .searchInput {
   min-width: 200px;
+}
+
+.viewToggle {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.columnsDropdown {
+  position: relative;
+}
+
+.columnsPanel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.25rem;
+  padding: 0.75rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 160px;
+}
+
+.columnCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  font-size: 0.875rem;
+  cursor: pointer;
+
+  input {
+    cursor: pointer;
+  }
+}
+
+.bulkBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: #f1f5f9;
+  border-radius: 6px;
+}
+
+.bulkLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $color-text;
+  margin-right: 0.5rem;
+}
+
+.content {
+  margin-top: 0.5rem;
 }
 
 .tableWrap {
@@ -101,4 +165,30 @@
 .pageInfo {
   font-size: 0.875rem;
   color: $color-text;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.cardMeta {
+  margin: 0;
+  font-size: 0.875rem;
+
+  dt {
+    margin-top: 0.5rem;
+    color: #64748b;
+    font-weight: 500;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  dd {
+    margin: 0.25rem 0 0;
+    color: $color-text;
+  }
 }
