@@ -8,7 +8,11 @@ import { formatDate } from '@helpers/formatDate.helper';
 import { Badge } from '@shared/uiKit/badge';
 
 import { DOCUMENT_PREVIEW_LABEL_KEYS } from './documentDetailPage.config';
+import { getMockActivityLog } from './documentDetailActivityLog.mock';
+import { getMockVersionHistory } from './documentDetailVersionHistory.mock';
+
 import { statusVariantMap } from '../documentListPage/configs/documentListColumns.config';
+import DocumentDetailComments from './components/DocumentDetailComments/DocumentDetailComments';
 
 import styles from './documentDetailPage.module.scss';
 
@@ -97,6 +101,75 @@ const DocumentDetailPage: FC = (): ReactElement => {
         <div className={styles.previewPlaceholder}>
           {t(DOCUMENT_PREVIEW_LABEL_KEYS[document.type])}
         </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>
+          {t('detail_version_history')}
+        </h2>
+        <div className={styles.timeline}>
+          {getMockVersionHistory(document.id).map((entry, index, arr) => (
+            <div
+              key={entry.version}
+              className={styles.timelineItem}
+            >
+              <div className={styles.timelineDot} />
+              {index < arr.length - 1 && (
+                <div className={styles.timelineLine} />
+              )}
+              <div className={styles.timelineContent}>
+                <span className={styles.timelineVersion}>
+                  {t('detail_version_number', { number: entry.version })}
+                </span>
+                {entry.labelKey && (
+                  <span className={styles.timelineLabel}>
+                    {t(entry.labelKey)}
+                  </span>
+                )}
+                <p className={styles.timelineMeta}>
+                  {formatDate(entry.date)}
+                  {' · '}
+                  {t('detail_version_by', { author: entry.author })}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>
+          {t('detail_activity_log')}
+        </h2>
+        <ul className={styles.activityList}>
+          {getMockActivityLog(document.id).map((entry) => (
+            <li
+              key={entry.id}
+              className={styles.activityItem}
+            >
+              <span className={styles.activityType}>
+                {t(`detail_activity_${entry.type}`)}
+              </span>
+              <span className={styles.activityMeta}>
+                {formatDate(entry.date)}
+                {' · '}
+                {entry.author}
+              </span>
+              {entry.detail && (
+                <p className={styles.activityDetail}>
+                  {entry.detail}
+                </p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>
+          {t('detail_comments_title')}
+        </h2>
+        <DocumentDetailComments />
       </section>
 
       <section className={styles.section}>

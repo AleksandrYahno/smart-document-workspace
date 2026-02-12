@@ -1,0 +1,132 @@
+@use '../../../../../shared/uiKit/variables' as *;
+@use '../../../../../shared/uiKit/remUtils' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+}
+
+.addRow {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  align-items: flex-start;
+}
+
+.textarea {
+  width: 100%;
+  max-width: 100%;
+  font-family: inherit;
+  font-size: #{rem(14)};
+  padding: p(8, 12);
+  border: 1px solid $color-border;
+  border-radius: br(8);
+  color: $color-text;
+  background-color: $color-surface;
+  resize: vertical;
+  min-height: rem(72);
+
+  &::placeholder {
+    color: $color-text-secondary;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 rem(3) rgba($color-primary, 0.2);
+  }
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.commentItem {
+  margin-bottom: rem(16);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.commentCard {
+  padding: rem(12);
+  background: $color-background;
+  border: 1px solid $color-border;
+  border-radius: br(8);
+}
+
+.commentMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: rem(8);
+  margin: 0 0 rem(6);
+  font-size: #{rem(13)};
+}
+
+.commentAuthor {
+  font-weight: 600;
+  color: $color-text;
+}
+
+.commentDate {
+  color: $color-text-secondary;
+}
+
+.commentText {
+  margin: 0 0 rem(8);
+  font-size: #{rem(14)};
+  color: $color-text;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.replyBtn {
+  margin-top: rem(4);
+}
+
+.repliesList {
+  margin: rem(8) 0 0 rem(24);
+  padding: 0;
+  list-style: none;
+  border-left: 2px solid $color-border;
+  padding-left: rem(12);
+}
+
+.replyItem {
+  margin-bottom: rem(8);
+  padding: rem(8);
+  background: $color-surface;
+  border-radius: br(6);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .commentMeta {
+    margin-bottom: rem(4);
+  }
+
+  .commentText {
+    margin-bottom: 0;
+  }
+}
+
+.replyForm {
+  margin-top: rem(8);
+  margin-left: rem(24);
+  padding-left: rem(12);
+  border-left: 2px solid $color-border;
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+}
+
+.replyActions {
+  display: flex;
+  gap: rem(8);
+}
