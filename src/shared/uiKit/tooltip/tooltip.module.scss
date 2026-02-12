@@ -1,0 +1,75 @@
+@use '../variables' as *;
+
+.wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.trigger {
+  cursor: default;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 1100;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+  color: #fff;
+  background-color: $color-text;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s, visibility 0.15s;
+  pointer-events: none;
+
+  .wrapper:hover &,
+  .wrapper:focus-within & {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.top {
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, -0.5rem);
+
+  .wrapper:hover &,
+  .wrapper:focus-within & {
+    transform: translate(-50%, -0.5rem);
+  }
+}
+
+.bottom {
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0.5rem);
+
+  .wrapper:hover &,
+  .wrapper:focus-within & {
+    transform: translate(-50%, 0.5rem);
+  }
+}
+
+.left {
+  right: 100%;
+  top: 50%;
+  transform: translate(-0.5rem, -50%);
+
+  .wrapper:hover &,
+  .wrapper:focus-within & {
+    transform: translate(-0.5rem, -50%);
+  }
+}
+
+.right {
+  left: 100%;
+  top: 50%;
+  transform: translate(0.5rem, -50%);
+
+  .wrapper:hover &,
+  .wrapper:focus-within & {
+    transform: translate(0.5rem, -50%);
+  }
+}

@@ -10,7 +10,7 @@ const WARNING = 1;
 const ERROR = 2;
 
 export default tseslint.config(
-  { ignores: ['dist', 'node_modules', '.storybook'] },
+  { ignores: ['dist', 'node_modules', '.storybook', 'storybook-static'] },
   {
     extends: [
       js.configs.recommended,
