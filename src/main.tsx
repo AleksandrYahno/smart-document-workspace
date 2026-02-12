@@ -14,7 +14,10 @@ import './index.css';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
-      <SnackbarProvider maxSnack={3} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
+      <SnackbarProvider
+        maxSnack={3}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      >
         <RouterProvider router={appRouter} />
       </SnackbarProvider>
     </Provider>

@@ -34,7 +34,7 @@ const AnalyticsStorageChart: FC<IAnalyticsStorageChartProps> = (props): ReactEle
         <BarChart data={chartData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="type" />
-          <YAxis tickFormatter={(value) => formatBytes(value)} />
+          <YAxis tickFormatter={(value: unknown) => formatBytes(value as number)} />
           <Tooltip formatter={(value: number | undefined) => (value != null ? formatBytes(value) : '')} />
           <Bar
             dataKey="bytes"

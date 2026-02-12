@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import useDocumentListStoreProvider from '../../providers/documentListStoreProvider/useDocumentListStoreProvider';
 import DocumentListBulkBarVM from '../DocumentListBulkBarVM/DocumentListBulkBarVM';
+import DocumentListSkeleton from './DocumentListSkeleton/DocumentListSkeleton';
 import DocumentListTableView from './DocumentListTableView/DocumentListTableView';
 import DocumentListGridView from './DocumentListGridView/DocumentListGridView';
 
@@ -37,9 +38,7 @@ const DocumentListContent: FC<IDocumentListContentProps> = (props): ReactElement
       <div className={styles.content}>
         {
           isLoading && (
-            <p className={styles.loading}>
-              {t('loading', { ns: 'common' })}
-            </p>
+            <DocumentListSkeleton />
           )
         }
 

@@ -14,6 +14,7 @@ import { getMockVersionHistory } from './documentDetailVersionHistory.mock';
 import { statusVariantMap } from '../documentListPage/configs/documentListColumns.config';
 import DocumentDetailComments from './components/DocumentDetailComments/DocumentDetailComments';
 import DocumentDetailSharing from './components/DocumentDetailSharing/DocumentDetailSharing';
+import DocumentDetailSkeleton from './components/DocumentDetailSkeleton/DocumentDetailSkeleton';
 
 import styles from './documentDetailPage.module.scss';
 
@@ -32,7 +33,9 @@ const DocumentDetailPage: FC = (): ReactElement => {
           to="/documents"
           className={styles.backLink}
         >
-          ← {t('detail_back_to_list')}
+          ←
+          {' '}
+          {t('detail_back_to_list')}
         </Link>
         <p className={styles.notFound}>
           {t('detail_not_found')}
@@ -48,11 +51,11 @@ const DocumentDetailPage: FC = (): ReactElement => {
           to="/documents"
           className={styles.backLink}
         >
-          ← {t('detail_back_to_list')}
+          ←
+          {' '}
+          {t('detail_back_to_list')}
         </Link>
-        <p className={styles.loading}>
-          {t('loading', { ns: 'common' })}
-        </p>
+        <DocumentDetailSkeleton />
       </div>
     );
   }
@@ -64,7 +67,9 @@ const DocumentDetailPage: FC = (): ReactElement => {
           to="/documents"
           className={styles.backLink}
         >
-          ← {t('detail_back_to_list')}
+          ←
+          {' '}
+          {t('detail_back_to_list')}
         </Link>
         <p className={styles.error}>
           {isError ? t('error_occurred', { ns: 'common' }) : t('detail_not_found')}
@@ -79,7 +84,9 @@ const DocumentDetailPage: FC = (): ReactElement => {
         to="/documents"
         className={styles.backLink}
       >
-        ← {t('detail_back_to_list')}
+        ←
+        {' '}
+        {t('detail_back_to_list')}
       </Link>
 
       <header className={styles.header}>

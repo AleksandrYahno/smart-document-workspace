@@ -8,12 +8,12 @@ import {
 import { useTranslation } from 'react-i18next';
 
 import { INITIAL_COMMENTS } from './documentDetailComments.config';
-import type { IComment } from './documentDetailComments.interface';
+import type { IComment, IUseDocumentDetailCommentsReturn } from './documentDetailComments.interface';
 
 const generateCommentId = (): string =>
   `comment-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 
-export const useDocumentDetailComments = () => {
+export const useDocumentDetailComments = (): IUseDocumentDetailCommentsReturn => {
   const { t } = useTranslation('documents');
 
   const [comments, setComments] = useState<IComment[]>(INITIAL_COMMENTS);

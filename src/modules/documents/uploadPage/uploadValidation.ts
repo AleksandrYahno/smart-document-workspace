@@ -12,7 +12,7 @@ const STEP_SCHEMAS: Partial<Record<UploadStep.File | UploadStep.Metadata, AnyObj
 };
 
 function mapYupErrorsToFormik(
-  err: { inner?: Array<{ path?: string; message?: string }> },
+  err: { inner?: { path?: string; message?: string }[] },
   t: TFunction,
 ): FormikErrors<IUploadFormValues> {
   const errors: FormikErrors<IUploadFormValues> = {};
@@ -47,6 +47,6 @@ export async function validateUploadStep(
 
     return {};
   } catch (err) {
-    return mapYupErrorsToFormik(err as { inner?: Array<{ path?: string; message?: string }> }, t);
+    return mapYupErrorsToFormik(err as { inner?: { path?: string; message?: string }[] }, t);
   }
 }

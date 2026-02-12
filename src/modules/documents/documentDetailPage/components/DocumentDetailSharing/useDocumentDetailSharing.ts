@@ -1,12 +1,16 @@
 import { useState, useCallback, useMemo, type ChangeEvent, type MouseEvent } from 'react';
 
-import type { ISharedUser, TSharingPermission } from './documentDetailSharing.interface';
+import type {
+  ISharedUser,
+  TSharingPermission,
+  IUseDocumentDetailSharingReturn,
+} from './documentDetailSharing.interface';
 import { getInitialSharedUsers } from './documentDetailSharing.config';
 
 const generateSharedUserId = (): string =>
   `shared-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 
-export const useDocumentDetailSharing = (documentId: string) => {
+export const useDocumentDetailSharing = (documentId: string): IUseDocumentDetailSharingReturn => {
   const [sharedUsers, setSharedUsers] = useState<ISharedUser[]>(() =>
     getInitialSharedUsers(documentId),
   );

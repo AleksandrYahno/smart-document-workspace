@@ -10,7 +10,19 @@ const WARNING = 1;
 const ERROR = 2;
 
 export default tseslint.config(
-  { ignores: ['dist', 'node_modules', '.storybook', 'storybook-static'] },
+  {
+    ignores: [
+      'dist',
+      'node_modules',
+      '.storybook',
+      'storybook-static',
+      'cypress/**/*',
+      '**/*.test.ts',
+      '**/*.spec.ts',
+      'jest.config.cjs',
+      'cypress.config.ts',
+    ],
+  },
   {
     extends: [
       js.configs.recommended,
@@ -50,6 +62,7 @@ export default tseslint.config(
           additionalHooks: '(useEffect)',
         },
       ],
+      'react-hooks/refs': OFF,
       'indent': ['warn', 2, { SwitchCase: 1 }],
       'no-tabs': ['warn'],
       'no-multiple-empty-lines': [
@@ -113,6 +126,12 @@ export default tseslint.config(
         },
       ],
       '@typescript-eslint/no-unsafe-member-access': OFF,
+      '@typescript-eslint/no-misused-promises': [
+        WARNING,
+        {
+          checksVoidReturn: false,
+        },
+      ],
     },
   },
 );

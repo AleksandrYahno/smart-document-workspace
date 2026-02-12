@@ -14,32 +14,54 @@ const UploadStepReview: FC<IUploadStepReviewProps> = (props): ReactElement => {
     <div className={styles.formCard}>
       <dl>
         <div className={styles.reviewRow}>
-          <dt>{t('upload_field_title')}</dt>
-          <dd>{values.title || '—'}</dd>
+          <dt>
+            {t('upload_field_title')}
+          </dt>
+          <dd>
+            {values.title || '—'}
+          </dd>
         </div>
 
         <div className={styles.reviewRow}>
-          <dt>{t('upload_field_description')}</dt>
-          <dd>{values.description || '—'}</dd>
+          <dt>
+            {t('upload_field_description')}
+          </dt>
+          <dd>
+            {values.description || '—'}
+          </dd>
         </div>
 
         <div className={styles.reviewRow}>
-          <dt>{t('upload_field_tags')}</dt>
-          <dd>{values.tags || '—'}</dd>
+          <dt>
+            {t('upload_field_tags')}
+          </dt>
+          <dd>
+            {values.tags || '—'}
+          </dd>
         </div>
 
         <div className={styles.reviewRow}>
-          <dt>{t('upload_field_category')}</dt>
-          <dd>{values.category ? t(`upload_category_${values.category}`) : '—'}</dd>
+          <dt>
+            {t('upload_field_category')}
+          </dt>
+          <dd>
+            {values.category ? t(`upload_category_${values.category}`) : '—'}
+          </dd>
         </div>
 
         <div className={styles.reviewRow}>
-          <dt>{t('upload_field_access')}</dt>
-          <dd>{t(`upload_access_${values.accessLevel}`)}</dd>
+          <dt>
+            {t('upload_field_access')}
+          </dt>
+          <dd>
+            {t(`upload_access_${values.accessLevel}`)}
+          </dd>
         </div>
 
         <div className={styles.reviewRow}>
-          <dt>File</dt>
+          <dt>
+            File
+          </dt>
           <dd>
             {values.file
               ? `${values.file.name} (${formatBytes(values.file.size)})`
@@ -58,7 +80,10 @@ const UploadStepReview: FC<IUploadStepReviewProps> = (props): ReactElement => {
               />
             </div>
             <div className={styles.progressLabel}>
-              Uploading… {Math.round(uploadProgress)}%
+              Uploading…
+              {' '}
+              {Math.round(uploadProgress)}
+              %
             </div>
           </div>
         )

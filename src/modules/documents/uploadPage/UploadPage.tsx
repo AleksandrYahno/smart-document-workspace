@@ -34,7 +34,7 @@ const UploadPage: FC = (): ReactElement => {
   const goToNextStep = uploadStore((s) => s.uploadSlice.goToNextStep);
   const goToPrevStep = uploadStore((s) => s.uploadSlice.goToPrevStep);
 
-  const handleSubmit = async (_values: IUploadFormValues): Promise<void> => {
+  const handleSubmit = (_values: IUploadFormValues): void => {
     setIsSubmitting(true);
     setUploadProgress(0);
 
@@ -49,7 +49,7 @@ const UploadPage: FC = (): ReactElement => {
         setUploadProgress(100);
         setIsSubmitting(false);
         enqueueSnackbar(t('upload_success'), { variant: 'success' });
-        navigate('/documents');
+        void navigate('/documents');
       } else {
         setUploadProgress(Math.min(progress, 99));
       }

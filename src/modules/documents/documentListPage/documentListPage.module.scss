@@ -114,6 +114,35 @@
   margin-right: rem(8);
 }
 
+.bulkModalContent {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+}
+
+.bulkModalLabel {
+  font-size: #{rem(14)};
+  font-weight: 500;
+  color: $color-text;
+}
+
+.bulkModalSelect {
+  padding: p(8, 12);
+  font-size: #{rem(14)};
+  border: 1px solid $color-border;
+  border-radius: br(6);
+  background: $color-surface;
+  color: $color-text;
+  min-width: rem(160);
+}
+
+.bulkModalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: rem(12);
+  margin-top: rem(8);
+}
+
 .content {
   margin-top: rem(8);
 }

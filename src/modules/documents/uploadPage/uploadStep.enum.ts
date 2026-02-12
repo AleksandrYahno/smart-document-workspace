@@ -4,7 +4,7 @@ export enum UploadStep {
   Review = 3,
 }
 
-export const UPLOAD_STEP_ORDER: ReadonlyArray<UploadStep> = [
+export const UPLOAD_STEP_ORDER: readonly UploadStep[] = [
   UploadStep.File,
   UploadStep.Metadata,
   UploadStep.Review,

@@ -30,11 +30,18 @@ const UploadDropzone: FC<IUploadDropzoneProps> = ({ file, error, onFile, t }): R
         {t('upload_drop')}
       </p>
       <p className={styles.dropzoneHint}>
-        {t('upload_file_types')}. {t('upload_max_size')}.
+        {t('upload_file_types')}
+        .
+        {t('upload_max_size')}
+        .
       </p>
       {file && (
         <p className={styles.fileName}>
-          {file.name} ({formatBytes(file.size)})
+          {file.name}
+          {' '}
+          (
+          {formatBytes(file.size)}
+          )
         </p>
       )}
       {error && (

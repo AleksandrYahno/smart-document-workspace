@@ -182,6 +182,30 @@
   color: $color-text-secondary;
 }
 
+.titleSkeleton {
+  margin-bottom: rem(8);
+}
+
+.metaSkeleton {
+  margin: 0;
+}
+
+.sectionTitleSkeleton {
+  margin: 0 0 rem(12);
+}
+
+.previewSkeleton {
+  border-radius: br(8);
+}
+
+.timelineSkeleton {
+  margin: 0;
+}
+
+.timelineMetaSkeleton {
+  margin: rem(4) 0 0;
+}
+
 .error {
   margin: rem(24) 0;
   font-size: #{rem(14)};
