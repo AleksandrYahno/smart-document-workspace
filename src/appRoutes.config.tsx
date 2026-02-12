@@ -1,7 +1,8 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 import App from './App';
-import { DocumentListPage } from '@modules/documents/documentListPage/DocumentListPage';
+import DocumentListPage from '@modules/documents/documentListPage/DocumentListPage';
+import UploadPage from '@modules/documents/uploadPage/UploadPage';
 
 export const appRouter = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const appRouter = createBrowserRouter([
       {
         path: 'documents',
         element: <DocumentListPage />,
+      },
+      {
+        path: 'documents/upload',
+        element: <UploadPage />,
       },
       {
         path: '*',

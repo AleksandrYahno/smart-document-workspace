@@ -1,0 +1,179 @@
+@use '../../../shared/uiKit/variables' as *;
+
+.page {
+  padding: 1.5rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $color-text;
+}
+
+.steps {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.step {
+  flex: 1;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $color-text-secondary;
+  background: $color-background;
+  border-radius: 6px;
+  border: 1px solid $color-border;
+
+  &.active {
+    color: $color-primary;
+    border-color: $color-primary;
+    background: rgba($color-primary, 0.06);
+  }
+
+  &.done {
+    color: $color-text;
+    border-color: $color-border;
+  }
+}
+
+.formCard {
+  padding: 1.5rem;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.dropzone {
+  border: 2px dashed $color-border;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+
+  &:hover,
+  &.active {
+    border-color: $color-primary;
+    background: rgba($color-primary, 0.04);
+  }
+
+  &.error {
+    border-color: #dc2626;
+    background: rgba(220, 38, 38, 0.04);
+  }
+
+  input {
+    display: none;
+  }
+}
+
+.dropzoneText {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  color: $color-text;
+}
+
+.dropzoneHint {
+  margin: 0;
+  font-size: 0.875rem;
+  color: $color-text-secondary;
+}
+
+.fileName {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $color-primary;
+}
+
+.field {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid $color-border;
+  border-radius: 6px;
+  background: $color-surface;
+  color: $color-text;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+.selectLabel {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $color-text;
+}
+
+.reviewRow {
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+
+  dt {
+    color: $color-text-secondary;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  dd {
+    margin: 0;
+    color: $color-text;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.progressWrap {
+  margin: 1rem 0;
+}
+
+.progressBar {
+  height: 8px;
+  background: $color-background;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: $color-primary;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progressLabel {
+  font-size: 0.875rem;
+  color: $color-text-secondary;
+  margin-top: 0.35rem;
+}
+
+.errorText {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #dc2626;
+}

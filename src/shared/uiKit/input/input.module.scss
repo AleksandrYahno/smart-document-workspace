@@ -20,24 +20,24 @@
   font-family: inherit;
   font-size: 1rem;
   padding: 0.5rem 0.75rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
+  border: 1px solid $color-border;
+  border-radius: 8px;
   color: $color-text;
-  background-color: #fff;
+  background-color: $color-surface;
   transition: border-color 0.2s, box-shadow 0.2s;
 
   &::placeholder {
-    color: #94a3b8;
+    color: $color-text-secondary;
   }
 
   &:focus {
     outline: none;
     border-color: $color-primary;
-    box-shadow: 0 0 0 3px rgba($color-primary, 0.15);
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
   }
 
   &:disabled {
-    background-color: #f1f5f9;
+    background-color: $color-background;
     cursor: not-allowed;
     opacity: 0.8;
   }

@@ -1,10 +1,10 @@
-import { useMemo, useState, useRef, useEffect } from 'react';
+import { FC, ReactElement, useMemo, useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import {
   useReactTable,
   getCoreRowModel,
   flexRender,
-  type ColumnDef,
   type SortingState,
   type RowSelectionState,
   type VisibilityState,
@@ -17,7 +17,8 @@ import { Badge } from '@shared/uiKit/badge';
 import { Button } from '@shared/uiKit/button';
 import { Card } from '@shared/uiKit/card';
 import { Input } from '@shared/uiKit/input';
-import type { IDocument, TDocumentStatus } from '@shared/types/document.interface';
+
+import { getDocumentListColumns, statusVariantMap } from './configs/documentListColumns.config';
 
 import styles from './documentListPage.module.scss';
 
@@ -25,13 +26,7 @@ const PAGE_SIZE = 10;
 
 type TViewMode = 'table' | 'grid';
 
-const statusVariantMap: Record<TDocumentStatus, 'default' | 'success' | 'warning' | 'error'> = {
-  draft: 'default',
-  review: 'warning',
-  approved: 'success',
-};
-
-export function DocumentListPage(): React.ReactElement {
+const DocumentListPage: FC = (): ReactElement => {
   const { t } = useTranslation('documents');
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState('');
@@ -54,76 +49,7 @@ export function DocumentListPage(): React.ReactElement {
     sortOrder,
   });
 
-  const columns = useMemo<ColumnDef<IDocument>[]>(
-    () => [
-      {
-        id: 'select',
-        header: ({ table }) => (
-          <input
-            type="checkbox"
-            checked={table.getIsAllPageRowsSelected()}
-            onChange={(e) => table.toggleAllPageRowsSelected(e.target.checked)}
-            aria-label="Select all"
-          />
-        ),
-        cell: ({ row }) => (
-          <input
-            type="checkbox"
-            checked={row.getIsSelected()}
-            onChange={(e) => row.toggleSelected(e.target.checked)}
-            aria-label="Select row"
-          />
-        ),
-        enableSorting: false,
-        enableHiding: false,
-      },
-      {
-        accessorKey: 'name',
-        header: t('name'),
-        cell: (info) => info.getValue() as string,
-        enableHiding: true,
-      },
-      {
-        accessorKey: 'type',
-        header: t('type'),
-        cell: (info) => info.getValue() as string,
-        enableHiding: true,
-      },
-      {
-        accessorKey: 'size',
-        header: t('size'),
-        cell: (info) => formatBytes(info.getValue() as number),
-        enableHiding: true,
-      },
-      {
-        accessorKey: 'owner',
-        header: t('owner'),
-        cell: (info) => info.getValue() as string,
-        enableHiding: true,
-      },
-      {
-        accessorKey: 'lastModified',
-        header: t('last_modified'),
-        cell: (info) => formatDate(info.getValue() as string),
-        enableHiding: true,
-      },
-      {
-        accessorKey: 'status',
-        header: t('status'),
-        cell: (info) => {
-          const status = info.getValue() as TDocumentStatus;
-
-          return (
-            <Badge variant={statusVariantMap[status]}>
-              {t(`status_${status}`)}
-            </Badge>
-          );
-        },
-        enableHiding: true,
-      },
-    ],
-    [t],
-  );
+  const columns = useMemo(() => getDocumentListColumns(t), [t]);
 
   // eslint-disable-next-line react-hooks/incompatible-library -- TanStack Table API
   const table = useReactTable({
@@ -182,6 +108,12 @@ export function DocumentListPage(): React.ReactElement {
         </h1>
 
         <div className={styles.toolbar}>
+          <Link
+            to="/documents/upload"
+            className={styles.uploadLink}
+          >
+            {t('upload')}
+          </Link>
           <form
             className={styles.searchForm}
             onSubmit={handleSearchSubmit}
@@ -480,4 +412,6 @@ export function DocumentListPage(): React.ReactElement {
       </div>
     </div>
   );
-}
+};
+
+export default DocumentListPage;
