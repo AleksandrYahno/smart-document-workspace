@@ -1,33 +1,34 @@
 @use '../../../shared/uiKit/variables' as *;
+@use '../../../shared/uiKit/remUtils' as *;
 
 .page {
-  padding: 1.5rem;
-  max-width: 640px;
+  padding: p(24);
+  max-width: rem(640);
   margin: 0 auto;
 }
 
 .title {
-  margin: 0 0 1.5rem;
-  font-size: 1.5rem;
+  margin: 0 0 rem(24);
+  font-size: rem(24);
   font-weight: 600;
   color: $color-text;
 }
 
 .steps {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: rem(8);
+  margin-bottom: rem(24);
 }
 
 .step {
   flex: 1;
-  padding: 0.5rem;
+  padding: p(8);
   text-align: center;
-  font-size: 0.875rem;
+  font-size: rem(14);
   font-weight: 500;
   color: $color-text-secondary;
   background: $color-background;
-  border-radius: 6px;
+  border-radius: br(6);
   border: 1px solid $color-border;
 
   &.active {
@@ -43,17 +44,17 @@
 }
 
 .formCard {
-  padding: 1.5rem;
+  padding: p(24);
   background: $color-surface;
   border: 1px solid $color-border;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
+  border-radius: br(8);
+  margin-bottom: rem(24);
 }
 
 .dropzone {
   border: 2px dashed $color-border;
-  border-radius: 8px;
-  padding: 2rem;
+  border-radius: br(8);
+  padding: p(32);
   text-align: center;
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
@@ -75,26 +76,32 @@
 }
 
 .dropzoneText {
-  margin: 0 0 0.25rem;
-  font-size: 1rem;
+  margin: 0 0 rem(4);
+  font-size: rem(16);
   color: $color-text;
 }
 
 .dropzoneHint {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: rem(14);
   color: $color-text-secondary;
 }
 
+.dropzoneError {
+  margin-top: rem(8);
+  font-size: rem(14);
+  color: #dc2626;
+}
+
 .fileName {
-  margin-top: 0.75rem;
-  font-size: 0.875rem;
+  margin-top: rem(12);
+  font-size: rem(14);
   font-weight: 500;
   color: $color-primary;
 }
 
 .field {
-  margin-bottom: 1rem;
+  margin-bottom: rem(16);
 
   &:last-child {
     margin-bottom: 0;
@@ -103,11 +110,11 @@
 
 .select {
   width: 100%;
-  padding: 0.5rem 0.75rem;
-  font-size: 1rem;
+  padding: p(8, 12);
+  font-size: rem(16);
   font-family: inherit;
   border: 1px solid $color-border;
-  border-radius: 6px;
+  border-radius: br(6);
   background: $color-surface;
   color: $color-text;
 
@@ -119,20 +126,20 @@
 
 .selectLabel {
   display: block;
-  margin-bottom: 0.35rem;
-  font-size: 0.875rem;
+  margin-bottom: rem(6);
+  font-size: rem(14);
   font-weight: 500;
   color: $color-text;
 }
 
 .reviewRow {
-  margin-bottom: 0.75rem;
-  font-size: 0.875rem;
+  margin-bottom: rem(12);
+  font-size: rem(14);
 
   dt {
     color: $color-text-secondary;
     font-weight: 500;
-    margin-bottom: 0.25rem;
+    margin-bottom: rem(4);
   }
 
   dd {
@@ -143,37 +150,44 @@
 
 .actions {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
+  gap: rem(12);
+  margin-top: rem(24);
 }
 
 .progressWrap {
-  margin: 1rem 0;
+  margin: m(16, 0);
 }
 
 .progressBar {
-  height: 8px;
+  height: rem(8);
   background: $color-background;
-  border-radius: 4px;
+  border-radius: br(4);
   overflow: hidden;
 }
 
 .progressFill {
   height: 100%;
+  width: 0;
   background: $color-primary;
-  border-radius: 4px;
+  border-radius: br(4);
   transition: width 0.3s ease;
+
+  @for $i from 0 through 100 {
+    &[data-progress='#{$i}'] {
+      width: #{$i}#{'%'};
+    }
+  }
 }
 
 .progressLabel {
-  font-size: 0.875rem;
+  font-size: rem(14);
   color: $color-text-secondary;
-  margin-top: 0.35rem;
+  margin-top: rem(6);
 }
 
 .errorText {
   display: block;
-  margin-top: 0.25rem;
-  font-size: 0.875rem;
+  margin-top: rem(4);
+  font-size: rem(14);
   color: #dc2626;
 }

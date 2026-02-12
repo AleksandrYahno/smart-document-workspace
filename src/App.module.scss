@@ -1,0 +1,28 @@
+@use './shared/uiKit/variables' as *;
+@use './shared/uiKit/remUtils' as *;
+
+.root {
+  min-height: 100vh;
+  background-color: $color-background;
+}
+
+.header {
+  padding: p(14, 24);
+  border-bottom: 1px solid $color-border;
+  background-color: $color-surface;
+}
+
+.headerLink {
+  font-weight: 600;
+  color: $color-text;
+  text-decoration: none;
+  font-size: #{rem(18)};
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.main {
+  margin-top: #{rem(24)};
+}

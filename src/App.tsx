@@ -2,31 +2,23 @@ import { FC, ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, Outlet } from 'react-router-dom';
 
+import styles from './App.module.scss';
+
 const App: FC = (): ReactElement => {
   const { t } = useTranslation('common');
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#fbfbfd' }}>
-      <header
-        style={{
-          padding: '0.875rem 1.5rem',
-          borderBottom: '1px solid #d2d2d7',
-          backgroundColor: '#ffffff',
-        }}
-      >
+    <div className={styles.root}>
+      <header className={styles.header}>
         <Link
           to="/documents"
-          style={{
-            fontWeight: 600,
-            color: '#1d1d1f',
-            textDecoration: 'none',
-            fontSize: '1.125rem',
-          }}
+          className={styles.headerLink}
         >
           {t('app_title')}
         </Link>
       </header>
-      <main>
+
+      <main className={styles.main}>
         <Outlet />
       </main>
     </div>

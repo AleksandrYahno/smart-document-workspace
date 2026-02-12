@@ -1,4 +1,5 @@
 @use '../variables' as *;
+@use '../remUtils' as *;
 
 .overlay {
   position: fixed;
@@ -8,13 +9,14 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: 1rem;
+  padding: p(16);
 }
 
 .dialog {
+  width: var(--modal-width, #{rem(480)});
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: br(8);
+  box-shadow: 0 rem(25) rem(50) rem(-12) rgba(0, 0, 0, 0.25);
   max-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -24,14 +26,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.25rem;
+  padding: p(16, 20);
   border-bottom: 1px solid #e2e8f0;
   flex-shrink: 0;
 }
 
 .title {
   margin: 0;
-  font-size: 1.125rem;
+  font-size: rem(18);
   font-weight: 600;
   color: $color-text;
 }
@@ -39,12 +41,12 @@
 .closeBtn {
   background: none;
   border: none;
-  padding: 0.25rem;
+  padding: p(4);
   cursor: pointer;
   color: #64748b;
   line-height: 1;
-  border-radius: 4px;
-  font-size: 1.25rem;
+  border-radius: br(4);
+  font-size: rem(20);
 
   &:hover {
     color: $color-text;
@@ -53,7 +55,7 @@
 }
 
 .body {
-  padding: 1.25rem;
+  padding: p(20);
   overflow-y: auto;
   flex: 1;
 }

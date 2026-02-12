@@ -1,5 +1,6 @@
 import { FC, useEffect } from 'react';
 
+import { rem } from '@helpers/remUtils';
 import { IModalProps } from './modal.interface';
 
 import styles from './modal.module.scss';
@@ -10,7 +11,7 @@ const Modal: FC<IModalProps> = (props) => {
     onClose,
     title,
     children,
-    width = '480px',
+    width = rem(480),
     showCloseButton = true,
   } = props;
 
@@ -52,7 +53,7 @@ const Modal: FC<IModalProps> = (props) => {
     >
       <div
         className={styles.dialog}
-        style={{ width }}
+        style={{ ['--modal-width' as string]: width }}
       >
         <header className={styles.header}>
           {

@@ -1,9 +1,10 @@
 @use '../variables' as *;
+@use '../remUtils' as *;
 
 .wrapper {
   display: inline-flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: rem(4);
 }
 
 .wrapperFullWidth {
@@ -11,17 +12,17 @@
 }
 
 .label {
-  font-size: 0.875rem;
+  font-size: rem(14);
   font-weight: 500;
   color: $color-text;
 }
 
 .input {
   font-family: inherit;
-  font-size: 1rem;
-  padding: 0.5rem 0.75rem;
+  font-size: rem(16);
+  padding: p(8, 12);
   border: 1px solid $color-border;
-  border-radius: 8px;
+  border-radius: br(8);
   color: $color-text;
   background-color: $color-surface;
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -33,7 +34,7 @@
   &:focus {
     outline: none;
     border-color: $color-primary;
-    box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
+    box-shadow: 0 0 0 rem(3) rgba($color-primary, 0.2);
   }
 
   &:disabled {
@@ -48,11 +49,11 @@
 
   &:focus {
     border-color: #dc2626;
-    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+    box-shadow: 0 0 0 rem(3) rgba(220, 38, 38, 0.15);
   }
 }
 
 .errorText {
-  font-size: 0.8125rem;
+  font-size: rem(13);
   color: #dc2626;
 }

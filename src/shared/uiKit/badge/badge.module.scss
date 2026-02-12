@@ -1,12 +1,13 @@
 @use '../variables' as *;
+@use '../remUtils' as *;
 
 .root {
   display: inline-flex;
   align-items: center;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.75rem;
+  padding: p(3, 8);
+  font-size: rem(12);
   font-weight: 500;
-  border-radius: 4px;
+  border-radius: br(4);
   line-height: 1.2;
 }
 

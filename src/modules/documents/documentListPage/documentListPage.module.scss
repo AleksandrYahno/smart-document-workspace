@@ -1,8 +1,9 @@
 @use 'sass:color';
 @use '../../../shared/uiKit/variables' as *;
+@use '../../../shared/uiKit/remUtils' as *;
 
 .page {
-  padding: 1.5rem;
+  padding: p(24);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -12,13 +13,13 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: rem(16);
+  margin-bottom: rem(24);
 }
 
 .title {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: #{rem(24)};
   font-weight: 600;
   color: $color-text;
 }
@@ -27,16 +28,16 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
+  gap: rem(16);
 }
 
 .uploadLink {
   display: inline-flex;
   align-items: center;
-  padding: 0.35rem 0.75rem;
-  font-size: 0.875rem;
+  padding: p(6, 12);
+  font-size: #{rem(14)};
   font-weight: 500;
-  border-radius: 6px;
+  border-radius: br(6);
   background-color: $color-primary;
   color: #fff;
   text-decoration: none;
@@ -51,17 +52,17 @@
 
 .searchForm {
   display: flex;
-  gap: 0.5rem;
+  gap: rem(8);
   align-items: flex-end;
 }
 
 .searchInput {
-  min-width: 200px;
+  min-width: rem(200);
 }
 
 .viewToggle {
   display: flex;
-  gap: 0.25rem;
+  gap: rem(4);
 }
 
 .columnsDropdown {
@@ -72,22 +73,22 @@
   position: absolute;
   top: 100%;
   right: 0;
-  margin-top: 0.25rem;
-  padding: 0.75rem;
+  margin-top: rem(4);
+  padding: p(12);
   background: $color-surface;
   border: 1px solid $color-border;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-radius: br(8);
+  box-shadow: 0 rem(4) rem(16) rgba(0, 0, 0, 0.08);
   z-index: 10;
-  min-width: 160px;
+  min-width: rem(160);
 }
 
 .columnCheckbox {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0;
-  font-size: 0.875rem;
+  gap: rem(8);
+  padding: p(6, 0);
+  font-size: #{rem(14)};
   cursor: pointer;
 
   input {
@@ -98,23 +99,23 @@
 .bulkBar {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
+  gap: rem(16);
+  padding: p(12, 16);
+  margin-bottom: rem(16);
   background: $color-background;
   border: 1px solid $color-border;
-  border-radius: 8px;
+  border-radius: br(8);
 }
 
 .bulkLabel {
-  font-size: 0.875rem;
+  font-size: #{rem(14)};
   font-weight: 500;
   color: $color-text;
-  margin-right: 0.5rem;
+  margin-right: rem(8);
 }
 
 .content {
-  margin-top: 0.5rem;
+  margin-top: rem(8);
 }
 
 .tableWrap {
@@ -124,7 +125,7 @@
 .loading,
 .error,
 .empty {
-  padding: 2rem;
+  padding: p(32);
   text-align: center;
   color: $color-text;
 }
@@ -136,11 +137,11 @@
 .table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.875rem;
+  font-size: #{rem(14)};
 }
 
 .th {
-  padding: 0.75rem 1rem;
+  padding: p(12, 16);
   text-align: left;
   font-weight: 600;
   color: $color-text;
@@ -170,36 +171,37 @@
 }
 
 .td {
-  padding: 0.75rem 1rem;
+  padding: p(12, 16);
   color: $color-text;
 }
 
 .pagination {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
-  padding-top: 1rem;
+  justify-content: center;
+  gap: rem(16);
+  margin-top: rem(16);
+  padding-top: rem(16);
   border-top: 1px solid $color-border;
 }
 
 .pageInfo {
-  font-size: 0.875rem;
+  font-size: #{rem(14)};
   color: $color-text;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(rem(280), 1fr));
+  gap: rem(16);
 }
 
 .cardMeta {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: #{rem(14)};
 
   dt {
-    margin-top: 0.5rem;
+    margin-top: rem(8);
     color: $color-text-secondary;
     font-weight: 500;
 
@@ -209,7 +211,7 @@
   }
 
   dd {
-    margin: 0.25rem 0 0;
+    margin: rem(4) 0 0;
     color: $color-text;
   }
 }

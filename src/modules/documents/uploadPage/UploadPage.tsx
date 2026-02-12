@@ -159,6 +159,7 @@ const UploadPage: FC = (): ReactElement => {
                   }}
                   t={t}
                 />
+
                 <div className={styles.actions}>
                   <Button
                     type="button"
@@ -183,6 +184,7 @@ const UploadPage: FC = (): ReactElement => {
                     fullWidth
                   />
                 </div>
+
                 <div className={styles.field}>
                   <Input
                     name="description"
@@ -193,6 +195,7 @@ const UploadPage: FC = (): ReactElement => {
                     fullWidth
                   />
                 </div>
+
                 <div className={styles.field}>
                   <Input
                     name="tags"
@@ -203,6 +206,7 @@ const UploadPage: FC = (): ReactElement => {
                     fullWidth
                   />
                 </div>
+
                 <div className={styles.field}>
                   <label className={styles.selectLabel}>
                     {t('upload_field_category')}
@@ -227,6 +231,7 @@ const UploadPage: FC = (): ReactElement => {
                     </span>
                   )}
                 </div>
+
                 <div className={styles.field}>
                   <label className={styles.selectLabel}>
                     {t('upload_field_access')}
@@ -251,6 +256,7 @@ const UploadPage: FC = (): ReactElement => {
                     </span>
                   )}
                 </div>
+
                 <div className={styles.actions}>
                   <Button
                     type="button"
@@ -277,22 +283,27 @@ const UploadPage: FC = (): ReactElement => {
                     <dt>{t('upload_field_title')}</dt>
                     <dd>{values.title || '—'}</dd>
                   </div>
+
                   <div className={styles.reviewRow}>
                     <dt>{t('upload_field_description')}</dt>
                     <dd>{values.description || '—'}</dd>
                   </div>
+
                   <div className={styles.reviewRow}>
                     <dt>{t('upload_field_tags')}</dt>
                     <dd>{values.tags || '—'}</dd>
                   </div>
+
                   <div className={styles.reviewRow}>
                     <dt>{t('upload_field_category')}</dt>
                     <dd>{values.category ? t(`upload_category_${values.category}`) : '—'}</dd>
                   </div>
+
                   <div className={styles.reviewRow}>
                     <dt>{t('upload_field_access')}</dt>
                     <dd>{t(`upload_access_${values.accessLevel}`)}</dd>
                   </div>
+
                   <div className={styles.reviewRow}>
                     <dt>File</dt>
                     <dd>
@@ -308,7 +319,7 @@ const UploadPage: FC = (): ReactElement => {
                     <div className={styles.progressBar}>
                       <div
                         className={styles.progressFill}
-                        style={{ width: `${uploadProgress}%` }}
+                        data-progress={Math.round(uploadProgress)}
                       />
                     </div>
                     <div className={styles.progressLabel}>
@@ -386,7 +397,7 @@ const Step1Dropzone: FC<IStep1DropzoneProps> = ({ file, error, onFile, t }) => {
         </p>
       )}
       {error && (
-        <p className={styles.dropzoneHint} style={{ color: '#dc2626', marginTop: '0.5rem' }}>
+        <p className={styles.dropzoneError}>
           {error}
         </p>
       )}

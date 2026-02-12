@@ -1,0 +1,40 @@
+@use 'sass:math';
+
+$rem-base: 16;
+
+@function rem($size: 16) {
+  @return math.div($size, $rem-base) * 1rem;
+}
+
+@function _spacing($top, $right: null, $bottom: null, $left: null) {
+  $r: $top;
+  $b: $top;
+  $l: $top;
+
+  @if $right != null {
+    $r: $right;
+    $l: $right;
+  }
+
+  @if $bottom != null {
+    $b: $bottom;
+  }
+
+  @if $left != null {
+    $l: $left;
+  }
+
+  @return rem($top) rem($r) rem($b) rem($l);
+}
+
+@function m($top, $right: null, $bottom: null, $left: null) {
+  @return _spacing($top, $right, $bottom, $left);
+}
+
+@function p($top, $right: null, $bottom: null, $left: null) {
+  @return _spacing($top, $right, $bottom, $left);
+}
+
+@function br($top, $right: null, $bottom: null, $left: null) {
+  @return _spacing($top, $right, $bottom, $left);
+}

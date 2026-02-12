@@ -1,14 +1,15 @@
 @use 'sass:color';
 @use '../variables' as *;
+@use '../remUtils' as *;
 
 .root {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: rem(8);
   font-family: inherit;
   font-weight: 500;
-  border-radius: 6px;
+  border-radius: br(6);
   border: 1px solid transparent;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s, color 0.2s;
@@ -20,18 +21,18 @@
 }
 
 .sm {
-  padding: 0.35rem 0.75rem;
-  font-size: 0.875rem;
+  padding: p(6, 12);
+  font-size: rem(14);
 }
 
 .md {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: p(8, 16);
+  font-size: rem(16);
 }
 
 .lg {
-  padding: 0.625rem 1.25rem;
-  font-size: 1.125rem;
+  padding: p(10, 20);
+  font-size: rem(18);
 }
 
 .primary {

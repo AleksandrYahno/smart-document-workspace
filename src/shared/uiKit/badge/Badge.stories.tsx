@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Badge from './Badge';
 
+import styles from './Badge.stories.module.scss';
+
 const meta: Meta<typeof Badge> = {
   component: Badge,
   title: 'UI Kit/Badge',
@@ -48,7 +50,7 @@ export const Error: TBadgeStory = {
 
 export const AllVariants: TBadgeStory = {
   render: () => (
-    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+    <div className={styles.variantsRow}>
       <Badge variant="default">
         draft
       </Badge>

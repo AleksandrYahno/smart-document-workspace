@@ -1,25 +1,26 @@
 @use '../variables' as *;
+@use '../remUtils' as *;
 
 .root {
   background: $color-surface;
   border: 1px solid $color-border;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+  border-radius: br(8);
+  box-shadow: 0 rem(1) rem(3) 0 rgba(0, 0, 0, 0.06);
   overflow: hidden;
 }
 
 .header {
-  padding: 1rem 1.25rem;
+  padding: p(16, 20);
   border-bottom: 1px solid $color-border;
 }
 
 .title {
   margin: 0;
-  font-size: 1rem;
+  font-size: rem(16);
   font-weight: 600;
   color: $color-text;
 }
 
 .body {
-  padding: 1.25rem;
+  padding: p(20);
 }
